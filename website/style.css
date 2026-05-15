@@ -2,9 +2,37 @@ body {
     background-color: #ffe6f0;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 50px;
+    /* CHANGE: Reduced mobile-friendly padding so content doesn't get squeezed */
+    padding: 20px 15px;
+}
+
+main {
+    max-width: 700px;
+    /* ADDED: width: 100% forces it to adapt to smaller screens */
+    width: 100%;
+    /* ADDED: box-sizing ensures padding doesn't accidentally make the box wider than the screen */
+    box-sizing: border-box;
+    /* ADDED: margin: 0 auto centers the main box horizontally on desktops */
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem; /* Slightly reduced padding for mobile */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 h1 {
     color: #ff3399;
+}
+
+/* --- ADDED: Media Query for Larger Screens --- */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 50px; /* Restores your original generous padding on desktops/tablets */
+    }
+    main {
+        padding: 2rem;
+    }
 }
